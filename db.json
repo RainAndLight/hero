@@ -4,6 +4,16 @@
       "name": "刘备",
       "gender": "男",
       "id": 4
+    },
+    {
+      "name": "kiriot",
+      "gender": "男",
+      "id": 5
+    },
+    {
+      "name": "当麻",
+      "gender": "男",
+      "id": 6
     }
   ]
 }

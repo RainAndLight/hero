@@ -17,7 +17,7 @@
             <td>{{item.name}}</td>
             <td>{{item.gender}}</td>
             <td>
-              <a>编辑</a> &nbsp;&nbsp;
+              <a @click="edit">编辑</a> &nbsp;&nbsp;
               <a @click="delHero(item.id)">删除</a>
             </td>
           </tr>
@@ -36,9 +36,12 @@ export default {
     };
   },
   methods: {
+    edit() {
+      this.$router.push("/heroes/edit");
+    },
     goAdd() {
       //编程式导航
-      this.$router.push("/heroes/add")
+      this.$router.push("/heroes/add");
     },
     delHero(id) {
       // console.log(id);

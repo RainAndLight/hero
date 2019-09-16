@@ -1,44 +1,52 @@
 <template>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h2 class="sub-header">Edit Hero</h2>
+    <h2 class="sub-header">编辑英雄</h2>
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">姓名</label>
         <input
-          type="email"
+          v-model="fromData.name"
           class="form-control"
           id="exampleInputEmail1"
-          placeholder="Email"
-          value="xxx"
+          placeholder="姓名"
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="exampleInputPassword1">性别</label>
         <input
-          type="password"
+          v-model="fromData.gender"
+          type="text"
           class="form-control"
           id="exampleInputPassword1"
-          placeholder="Password"
-          value="xxx"
+          placeholder="性别"
         />
       </div>
-      <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile" />
-        <p class="help-block">Example block-level help text here.</p>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" /> Check me out
-        </label>
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+
+      <button type="submit" class="btn btn-success" @click="edit">修改</button>
     </form>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      fromData: {
+        name: "",
+        gender: ""
+      }
+    };
+  },
+  methods: {
+    edit() {
+        axios({
+            url:"http://localhost:3000/user/" + id,
+
+        })
+    }
+  }
+};
 </script>
 
 <style>
