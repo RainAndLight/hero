@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 import header from "./header";
 import list from "./list";
 import left from "./left";
