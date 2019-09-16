@@ -40,11 +40,22 @@ export default {
   },
   methods: {
     edit() {
-        axios({
-            url:"http://localhost:3000/user/" + id,
-
-        })
+      axios({
+        url: "http://localhost:3000/user/" + this.$route.params.id,
+        data: this.fromData,
+        method: "put"
+      }).then(() => {
+        this.$router.push("/heroes");
+      });
     }
+  },
+  created() {
+    let id = this.$route.params.id;
+    axios({
+      url: "http://localhost:3000/user/" + id
+    }).then(result => {
+      this.fromData = result.data;
+    });
   }
 };
 </script>

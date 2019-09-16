@@ -24,7 +24,7 @@ var router = new VueRouter({
                     path: 'add',
                     component: add
                 }, {
-                    path: 'edit',
+                    path: 'edit/:id', //定义动态路由的形参
                     component: edit
                 }
             ]
