@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h2 class="sub-header">英雄列表</h2>
-    <a class="btn btn-success" href="add.html">添加</a>
+    <a class="btn btn-success" @click="goAdd">添加</a>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -36,6 +36,10 @@ export default {
     };
   },
   methods: {
+    goAdd() {
+      //编程式导航
+      this.$router.push("/heroes/add")
+    },
     delHero(id) {
       // console.log(id);
       if (confirm("你确定删除吗")) {
