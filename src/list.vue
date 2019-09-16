@@ -18,7 +18,7 @@
             <td>{{item.gender}}</td>
             <td>
               <a>编辑</a> &nbsp;&nbsp;
-              <a>删除</a>
+              <a @click="delHero(item.id)">删除</a>
             </td>
           </tr>
         </tbody>
@@ -36,6 +36,18 @@ export default {
     };
   },
   methods: {
+    delHero(id) {
+      // console.log(id);
+      if (confirm("你确定删除吗")) {
+        console.log(id);
+        axios({
+          url: "http://localhost:3000/user/" + id,
+          method: "delete"
+        }).then(() => {
+          this.loadDate();
+        });
+      }
+    },
     loadDate() {
       axios({
         url: "http://localhost:3000/user"
