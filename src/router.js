@@ -7,7 +7,9 @@ import second from "./list-second"
 import add from "./add"
 import edit from "./edit"
 Vue.use(VueRouter) //全局注册router管理器
-var router = new VueRouter({
+
+export default  new VueRouter({
+    linkActiveClass : "active",
     routes: [
         {
             path: "/",
@@ -39,4 +41,3 @@ var router = new VueRouter({
         }
     ]
 })
-export default router;

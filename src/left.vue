@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-      <router-link tag="li" class="active" to="/heroes">
+      <router-link tag="li"  to="/heroes">
         <a>英雄列表</a>
       </router-link>
       <router-link tag="li" to="/gear">

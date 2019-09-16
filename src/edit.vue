@@ -40,17 +40,23 @@ export default {
   },
   methods: {
     edit() {
-      axios({
-        url: "http://localhost:3000/user/" + this.$route.params.id,
-        data: this.fromData,
-        method: "put"
-      }).then(() => {
-        this.$router.push("/heroes");
-      });
+      if (this.fromData.name && this.fromData.gender) {
+        axios({
+          url: "http://localhost:3000/user/" + this.$route.params.id,
+          data: this.fromData,
+          method: "put"
+        }).then(() => {
+          this.$router.push("/heroes");
+        });
+      } else {
+        alert("不能为空");
+      }
     }
   },
   created() {
     let id = this.$route.params.id;
+    console.log(this.$route);
+
     axios({
       url: "http://localhost:3000/user/" + id
     }).then(result => {
